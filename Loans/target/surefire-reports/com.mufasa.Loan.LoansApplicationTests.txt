@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.mufasa.Loan.LoansApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.329 s - in com.mufasa.Loan.LoansApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.576 s - in com.mufasa.Loan.LoansApplicationTests
