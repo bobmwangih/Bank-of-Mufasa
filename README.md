@@ -54,17 +54,23 @@ And `felicidades!` you are ready to test build more on this project !
 -Log in to keycloak server using the credentials you used when starting the container and do the following: 
 ```java
 1. Create two accounts : mufasa-test-environment(Oauth2 client credentials grant flow) & mufasa-gateway-ui(Oauth2 Authorization code grant flow `. The submitted code uses the latter but you can pull this [accounts microservice image) to use the former.
+```
 ![client-grant-flow](/images/client-grant-flow.png)
 
 ![code-grant-flow](/images/code-grant-flow.png)
 
+```java
 2. Create a role called ACCOUNTS and assign it to mufasa-test-environment client.
+```
 
 ![client-grant-flow-roles](/images/client-grant-flow-roles.png)
 
+```java
 3. Create user and give them ACCOUNTS role
+```
 
 ![code-grant-flow-roles](/images/code-grant-flow-roles.png)
+
 ```
 ### Testing using oauth2 client credentials grant flow
 - a `post` call to : `http://localhost:7080/realms/master/protocol/openid-connect/token` to get a token`
