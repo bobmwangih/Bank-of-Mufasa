@@ -1,6 +1,0 @@
-dependencies:
-- name: mufasa-common
-  repository: file://../../mufasa-common
-  version: 0.1.0
-digest: sha256:2938e2294c156732a0d940c9cabbec096ba5a3124fd4c812494306edce9b1a4f
-generated: "2022-09-09T12:58:14.3642306+03:00"
