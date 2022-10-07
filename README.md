@@ -18,18 +18,18 @@
 
 ### Pre-Usage
 
-**Shout out to EazyBytes [Daraja](https://www.udemy.com/course/master-microservices-with-spring-docker-kubernetes) for teaching me most of what i implemented in this project. **
+`Shout out to [EazyBytes](https://www.udemy.com/course/master-microservices-with-spring-docker-kubernetes) for teaching me most of what i implemented in this project. `
 
 
 ## Getting Started
 -Before running this solution you need to have docker installed in your local system.
-- **All the images have been uploaded to docker hub : [Bank of Mufasa](https://hub.docker.com/repository/docker/bobmwas/mufasa) **
+- All the images have been uploaded to docker hub : [Bank of Mufasa](https://hub.docker.com/repository/docker/bobmwas/mufasa) 
 -Navigate download the docker-compose file from here: [Docker-compose file](https://github.com/bobmwangih/Bank-of-Mufasa/tree/master/Accounts/docker-compose/default)
 -On your local environment's terminal run ```js docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:18.0.0 start-dev ```
  to spin up a keycloak server on your local env.
 -Now in the location of the downloaded `docker-compose file`; run `docker-compose up` to spin up all the microservices that power this project.
 
-###Alternatively :
+### Alternatively :
 -`Clone` the project and generate you  own docker images from the following springBoot projects :
 
 ```java
@@ -54,22 +54,22 @@ And `felicidades!` you are ready to test build more on this project !
 -Log in to keycloak server using the credentials you used when starting the container and do the following: 
 ```java
 1. Create two accounts : mufasa-test-environment(Oauth2 client credentials grant flow) & mufasa-gateway-ui(Oauth2 Authorization code grant flow `. The submitted code uses the latter but you can pull this [accounts microservice image) to use the former.
-[Site preview](/images/client-grant-flow.png)
+![client-grant-flow](/images/client-grant-flow.png)
 
-[Site preview](/images/code-grant-flow.png)
+![code-grant-flow](/images/code-grant-flow.png)
 
 2. Create a role called ACCOUNTS and assign it to mufasa-test-environment client.
 
-[Site preview](/images/client-grant-flow-roles.png)
+![client-grant-flow-roles](/images/client-grant-flow-roles.png)
 
 3. Create user and give them ACCOUNTS role
 
-[Site preview](/images/code-grant-flow-roles.png)
+![code-grant-flow-roles](/images/code-grant-flow-roles.png)
 ```
 ### Testing using oauth2 client credentials grant flow
 - a `post` call to : `http://localhost:7080/realms/master/protocol/openid-connect/token` to get a token`
 
-[Site preview](/images/client-grant-flow-postrequest.png)
+![Requesting token](/images/client-grant-flow-postrequest.png)
 
 - Call the endpoints using this generated token.
 
@@ -81,6 +81,7 @@ And `felicidades!` you are ready to test build more on this project !
 ### Testing in google cloud platform 
 - log in to your google cloud platform and select a GKE(Google Kubernetes Engine resource).
 - Create a cluster and connect to it in your local terminal.
+
 `Note` : 
 1. You can choose to deploy each microservice at a time to the kubernetes cluster/ you can use `helm` charts provided in this repo/helm to deploy all the microservices at once.
 
@@ -127,5 +128,5 @@ docker stop $(docker container ls -q) :-stops all running containers
 ##Resources
 1. [My DockerHub repository :](https://hub.docker.com/repository/docker/bobmwas/mufasa)
 2. [Google kubernetes Engine :](https://console.cloud.google.com/kubernetes/list/overview?project=bank-of-mufasa)
-3. [Helm ] (https://helm.sh/) 
+3. [Helm ](https://helm.sh/) 
 
