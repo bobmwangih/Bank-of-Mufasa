@@ -18,14 +18,14 @@
 
 ### Pre-Usage
 
-`Shout out to [EazyBytes](https://www.udemy.com/course/master-microservices-with-spring-docker-kubernetes) for teaching me most of what i implemented in this project. `
+`Shout out to ` [EazyBytes](https://www.udemy.com/course/master-microservices-with-spring-docker-kubernetes) `for teaching me most of what i implemented in this project. `
 
 
 ## Getting Started
 -Before running this solution you need to have docker installed in your local system.
 - All the images have been uploaded to docker hub : [Bank of Mufasa](https://hub.docker.com/repository/docker/bobmwas/mufasa) 
--Navigate download the docker-compose file from here: [Docker-compose file](https://github.com/bobmwangih/Bank-of-Mufasa/tree/master/Accounts/docker-compose/default)
--On your local environment's terminal run ```js docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:18.0.0 start-dev ```
+-Navigate download the docker-compose file from here: [Docker-compose file](https://github.com/bobmwangih/Bank-of-Mufasa/blob/master/docker-compose/default/docker-compose.yml)
+-On your local environment's terminal run ` docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:18.0.0 start-dev `
  to spin up a keycloak server on your local env.
 -Now in the location of the downloaded `docker-compose file`; run `docker-compose up` to spin up all the microservices that power this project.
 
@@ -33,7 +33,11 @@
 -`Clone` the project and generate you  own docker images from the following springBoot projects :
 
 ```java
-1. Accounts : [has a docker file to build its image](https://github.com/bobmwangih/Bank-of-Mufasa/blob/master/Accounts/Dockerfile) command: `docker build . -t mufasa/accounts`
+1. Accounts :
+```
+
+[has a docker file to build its image](https://github.com/bobmwangih/Bank-of-Mufasa/blob/master/Accounts/Dockerfile) command: mvn install  +  `docker build . -t mufasa/accounts`
+```java
 2. Cards - command `mvn spring-boot:build-image`
 3. ConfigServer - command `mvn spring-boot:build-image`
 4. EurekaServer - command `mvn spring-boot:build-image`
@@ -92,7 +96,8 @@ And `felicidades!` you are ready to test build more on this project !
 1. You can choose to deploy each microservice at a time to the kubernetes cluster/ you can use `helm` charts provided in this repo/helm to deploy all the microservices at once.
 
 ### userful commands to use with Kubernetes and Helm
-```java
+
+```
 kubectl scale deployment accounts-deployment --replicas=3
 
 kubectl describe pod <pod name>
