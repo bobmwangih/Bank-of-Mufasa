@@ -142,7 +142,7 @@ docker stop $(docker container ls -q) :-stops all running containers
 ```
 
 
-##Resources
+## Resources
 1. [My DockerHub repository :](https://hub.docker.com/repository/docker/bobmwas/mufasa)
 2. [Google kubernetes Engine :](https://console.cloud.google.com/kubernetes/list/overview?project=bank-of-mufasa)
 3. [Helm ](https://helm.sh/) 
