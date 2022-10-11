@@ -54,7 +54,7 @@ And `felicidades!` you are ready to test build more on this project !
 `Note:`
 1. All the endpoints except the `loans service` endpoints require authentication while some require authorization too.
 2. All endpoints should go through the gatewayserver : `http://localhost:8072/mufasa/*`
-3. The endpoints have been secured using two approaches : `Oauth2 client credentials grant flow` and `Oauth2 Authorization code grant flow `. The submitted code uses the latter but you can pull this [accounts microservice image](https://hub.docker.com/repository/docker/bobmwas/mufasa) from my dockerhub to test using client credentials grant flow.
+3. The endpoints have been secured using two approaches : `Oauth2 client credentials grant flow` and `Oauth2 Authorization code grant flow `. The submitted code uses the latter but you can pull this [accounts microservice image](https://hub.docker.com/repository/docker/bobmwas/mufasa) from my dockerhub to test using client credentials grant flow / clone the code from [client-credentials-grantflow branch] (https://github.com/bobmwangih/Bank-of-Mufasa/tree/client-credentials-grantflow) .
 -Log in to keycloak server using the credentials you used when starting the container and do the following: 
 ```java
 1. Create two accounts : mufasa-test-environment(Oauth2 client credentials grant flow) & mufasa-gateway-ui(Oauth2 Authorization code grant flow `. The submitted code uses the latter but you can pull this [accounts microservice image) to use the former.
@@ -75,25 +75,31 @@ And `felicidades!` you are ready to test build more on this project !
 
 ![code-grant-flow-roles](/images/code-grant-flow-roles.png)
 
-```
+
 ### Testing using oauth2 client credentials grant flow
+```
 - a `post` call to : `http://localhost:7080/realms/master/protocol/openid-connect/token` to get a token`
 
 ![Requesting token](/images/client-grant-flow-postrequest.png)
 
 - Call the endpoints using this generated token.
+```
 
 ### Testing using oauth2 client credentials grant flow
+```
 - call any `get` rest API from the browser.
 - the URL should be redirected to a keycloak login page.
 - login with a user with the required roles to access that resource.
+```
 
 ### Testing in google cloud platform 
+```
 - log in to your google cloud platform and select a GKE(Google Kubernetes Engine resource).
 - Create a cluster and connect to it in your local terminal.
 
 `Note` : 
 1. You can choose to deploy each microservice at a time to the kubernetes cluster/ you can use `helm` charts provided in this repo/helm to deploy all the microservices at once.
+```
 
 ### userful commands to use with Kubernetes and Helm
 
