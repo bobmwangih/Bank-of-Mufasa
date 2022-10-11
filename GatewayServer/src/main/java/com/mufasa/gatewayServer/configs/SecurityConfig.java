@@ -18,8 +18,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
-        http.authorizeExchange(exchanges -> exchanges.pathMatchers("/mufasa/accounts/**").authenticated()
-        		//.hasRole("ACCOUNTS")
+        http.authorizeExchange(exchanges -> exchanges.pathMatchers("/mufasa/accounts/**").hasRole("ACCOUNTS")
                         .pathMatchers("/mufasa/cards/**").authenticated()
                         .pathMatchers("/mufasa/loans/**").permitAll())
                 .oauth2ResourceServer().jwt().jwtAuthenticationConverter(grantedAuthoritiesExtractor());
@@ -34,5 +33,4 @@ public class SecurityConfig {
                 (new KeycloakRoleConverter());
         return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
     }
-
 }
